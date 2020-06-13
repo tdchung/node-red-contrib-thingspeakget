@@ -1,0 +1,71 @@
+<script type="text/javascript">
+  RED.nodes.registerType("thingspeakget", {
+    category: "function",
+    color: "#e87d81",
+    credentials: {
+      readApiKey: { type: "password", required: true },
+    },
+    defaults: {
+      name: { value: "" },
+      length: { value: 1, validate: RED.validators.number() },
+      channel: { value: "", validate: RED.validators.number() },
+      endpoint: {
+        type: "text",
+        required: true,
+        value: "https://thingspeak.com",
+      },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "ThingSpeak Get";
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="thingspeakget">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-length"><i class="icon-globe"></i>Length</label>
+      <input type="text" id="node-input-length" placeholder="ThingSpeak length of response">
+  </div>
+  <div class="form-row">
+      <label for="node-input-endpoint"><i class="icon-globe"></i>API URL</label>
+      <input type="text" id="node-input-endpoint" placeholder="ThingSpeak API endpoint URL">
+  </div>
+  <div class="form-row">
+      <label for="node-input-channel"><i class="icon-globe"></i>Channel</label>
+      <input type="text" id="node-input-channel" placeholder="ThingSpeak channel Id">
+  </div>
+  <div class="form-row">
+      <label for="node-input-apiKey"><i class="icon-lock"></i>API Key</label>
+      <input type="password" id="node-input-readApiKey" placeholder="ThingSpeak Read API Key">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="thingspeakget">
+  <p>Read data from ThingSpeak channel.</p>
+
+  <p>This is the descriptions.
+      start get data point when module received any data
+  </p>
+
+  <p>Configuration:</p>
+
+  <ul>
+    <li><code>Name</code> - The name to display for this node.  Leave blank to use the default.</li>
+
+    <li><code>Length</code> - Length of list data u wana to get.</li>
+
+    <li><code>API URL</code> - The URL of the ThingSpeak server.  If you are using the official
+    hosted site, you can use the default:  https://thingspeak.com</li>
+
+    <li><code>Channel</code> - Channel ID.  (Required)</li>
+
+    <li><code>Read API Key</code> - This is the Read API Key for your ThingSpeak channel.  You can
+    obtain it from the web site.  (Required)</li>
+    </ul>
+</script>

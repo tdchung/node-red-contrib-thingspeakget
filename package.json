@@ -1,0 +1,22 @@
+{
+  "name": "red-contrib-thingspeakget",
+  "version": "1.0.0",
+  "description": "The sample node red to get data from thingspeak server",
+  "author": "tdchung",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "todo"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "thingspeak42": "thingspeakget.js"
+    }
+  }
+}
