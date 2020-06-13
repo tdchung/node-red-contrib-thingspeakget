@@ -18,5 +18,12 @@
     "nodes": {
       "thingspeak42": "thingspeakget.js"
     }
+  },
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "devDependencies": {
+    "node-red": "^1.0.6",
+    "node-red-node-test-helper": "^0.2.5"
   }
 }
